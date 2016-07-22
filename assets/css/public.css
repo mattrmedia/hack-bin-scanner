@@ -346,4 +346,16 @@ hr {
           margin-right: -100%;
           clear: none; } }
 
+.svg {
+  fill: white; }
+
+.scanner__bin, .scanner__item {
+  color: #fff; }
+.scanner__bin {
+  font-size: 4rem;
+  font-weight: 200; }
+.scanner__item {
+  font-size: 2.5rem;
+  font-weight: 600; }
+
 /*# sourceMappingURL=public.css.map */
