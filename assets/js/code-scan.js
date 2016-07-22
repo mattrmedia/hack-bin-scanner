@@ -11,7 +11,8 @@
                 var keycode = (e.which) ? e.which : e.keyCode;
                 if ((keycode >= 65 && keycode <= 90) ||
                     (keycode >= 97 && keycode <= 122) ||
-                    (keycode >= 48 && keycode <= 57)
+                    (keycode >= 48 && keycode <= 57) ||
+                    (keycode == 45)
                 ) {
                     chars.push(String.fromCharCode(e.which));
                 }
