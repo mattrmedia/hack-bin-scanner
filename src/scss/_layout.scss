@@ -1,10 +1,15 @@
 .layout {
   $b: &;
 
+  display: flex;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: -moz-flex;
   @include clearfix;
   box-sizing: content-box;
   max-width: 76rem;
   padding: 5rem;
+  height: 100%;
 
   & *, & *:before, & *:after {
     box-sizing: border-box;
