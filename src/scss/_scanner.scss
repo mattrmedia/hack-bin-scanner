@@ -1,4 +1,21 @@
 .scanner {
+
+  &__header {
+    padding: 1rem;
+    white-space: nowrap;
+  }
+
+  &__logo,
+  &__count {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  &__count {
+    text-align: right;
+  }
+
   &__bin,
   &__item,
   &__welcome {

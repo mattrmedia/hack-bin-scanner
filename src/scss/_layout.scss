@@ -22,6 +22,10 @@
     background-color: $error;
   }
 
+  &--welcome {
+    background-color: $brand-primary;
+  }
+
   &__footer {
     position: relative;
   }

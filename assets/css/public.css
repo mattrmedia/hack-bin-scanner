@@ -146,6 +146,9 @@ hr {
   border: 0;
   border-top: 1px solid #ccc; }
 
+.hidden {
+  display: none; }
+
 .layout {
   max-width: 100%;
   margin-left: auto;
@@ -165,6 +168,8 @@ hr {
     background-color: #328760; }
   .layout--error {
     background-color: #cb2026; }
+  .layout--welcome {
+    background-color: #ad9885; }
   .layout__footer {
     position: relative; }
 
@@ -346,6 +351,15 @@ hr {
           margin-right: -100%;
           clear: none; } }
 
+.scanner__header {
+  padding: 1rem;
+  white-space: nowrap; }
+.scanner__logo, .scanner__count {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%; }
+.scanner__count {
+  text-align: right; }
 .scanner__bin, .scanner__item, .scanner__welcome {
   color: #fff; }
 .scanner__welcome {
