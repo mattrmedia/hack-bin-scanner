@@ -1,0 +1,56 @@
+.layout {
+  $b: &;
+
+  @include clearfix;
+  box-sizing: content-box;
+  max-width: 76rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  & *, & *:before, & *:after {
+    box-sizing: border-box;
+  }
+
+  &--full-bleed {
+    padding: 0;
+  }
+
+  &__footer {
+    position: relative;
+  }
+
+  &--sidebar {
+    @include susy-breakpoint(md) {
+      & #{$b}__heading,
+      & #{$b}__body {
+        @include span(9 last);
+      }
+
+      & #{$b}__sidebar {
+        @include span(3);
+      }
+    }
+  }
+
+  &--aside {
+    & > :nth-child(1) {
+      & > :first-child {
+        margin-top: 1rem;
+      }
+
+      @include susy-breakpoint(md) {
+        @include span(8);
+      }
+    }
+
+    & > :nth-child(2) {
+      & > :first-child {
+        margin-top: 1rem;
+      }
+
+      @include susy-breakpoint(md) {
+        @include span(4 last);
+      }
+    }
+  }
+}

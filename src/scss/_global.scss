@@ -1,0 +1,169 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100%;
+  overflow-y: scroll;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@each $heading, $size in $headings {
+  h#{$heading} {
+    font-size: $size;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+address {
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0; // Undo browser default
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+img {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
+th {
+  text-align: left;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+
+  & abbr[title="required"] {
+    border-bottom: none;
+  }
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  line-height: inherit;
+  border-radius: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  &.full {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+}
+
+textarea {
+  resize: vertical;
+
+  &.full {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 100%;
+    border-color: #ccc;
+  }
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+}
+
+input[type="search"] {
+  box-sizing: inherit;
+  -webkit-appearance: none;
+}
+
+a {
+  color: $brand-primary;
+
+  &:hover,
+  &:focus {
+    color: #000;
+  }
+}
+
+hr {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.layout {
+  width: span(2);
+}

@@ -1,0 +1,67 @@
+.gallery {
+  @include container;
+
+  &--two {
+    & > * {
+      margin-bottom: 1.5rem;
+
+      @include susy-breakpoint(md) {
+        @include gallery(6);
+        margin: 0 0 gutter() 0;
+      }
+    }
+  }
+
+  &--three {
+    & > * {
+      margin-bottom: 1.5rem;
+
+      @include susy-breakpoint(xs) {
+        @include gallery(6);
+        margin: 0 0 gutter() 0;
+      }
+
+      @include susy-breakpoint(lg) {
+        @include gallery(4);
+      }
+    }
+  }
+
+  &--four {
+    & > * {
+      margin-bottom: 1.5rem;
+
+      @include susy-breakpoint(xs) {
+        @include gallery(6);
+        margin: 0 0 gutter() 0;
+      }
+
+      @include susy-breakpoint(md) {
+        @include gallery(4);
+      }
+
+      @include susy-breakpoint(lg) {
+        @include gallery(3);
+      }
+    }
+  }
+
+  &--six {
+    & > * {
+      margin-bottom: 1.5rem;
+
+      @include susy-breakpoint(sm) {
+        @include gallery(4);
+        margin: 0 0 gutter() 0;
+      }
+
+      @include susy-breakpoint(md) {
+        @include gallery(4);
+      }
+
+      @include susy-breakpoint(lg) {
+        @include gallery(2);
+      }
+    }
+  }
+}
