@@ -4,8 +4,7 @@
   @include clearfix;
   box-sizing: content-box;
   max-width: 76rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 5rem;
 
   & *, & *:before, & *:after {
     box-sizing: border-box;

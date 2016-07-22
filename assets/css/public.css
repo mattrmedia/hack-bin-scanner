@@ -152,8 +152,7 @@ hr {
   margin-right: auto;
   box-sizing: content-box;
   max-width: 76rem;
-  padding-left: 1rem;
-  padding-right: 1rem; }
+  padding: 5rem; }
   .layout:after {
     content: ' ';
     display: block;
