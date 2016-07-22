@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build:scss": "node-sass src/scss/public.scss --output assets/css/ --source-map-embed --source-map-contents",
-    "dev": "lite-server"
+    "watch:scss": "npm run build:scss -- --watch",
+    "dev": "lite-server",
+    "build": "npm run build:scss && npm run dev"
   },
   "repository": {
     "type": "git",
