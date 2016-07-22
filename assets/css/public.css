@@ -2,12 +2,22 @@ html {
   font-family: 'proxima-nova', sans-serif;
   font-weight: 400; }
 
+.scanner__count {
+  font-family: 'gnuolane', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.09rem;
+  text-transform: uppercase; }
+
 html {
   box-sizing: border-box;
   font-size: 16px;
   line-height: 1.5;
   min-height: 100%;
   overflow-y: scroll; }
+
+body {
+  margin: 0;
+  height: 100%; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -359,6 +369,9 @@ hr {
   vertical-align: middle;
   width: 50%; }
 .scanner__count {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
   text-align: right; }
 .scanner__bin, .scanner__item, .scanner__welcome {
   color: #fff; }

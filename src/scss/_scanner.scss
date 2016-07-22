@@ -13,6 +13,10 @@
   }
 
   &__count {
+    font-size: 1.5rem;
+    font-weight: 600;
+    @extend %gnuolane;
+    text-transform: uppercase;
     text-align: right;
   }
 
