@@ -15,42 +15,15 @@
     padding: 0;
   }
 
+  &--success {
+    background-color: $success;
+  }
+
+  &--error {
+    background-color: $error;
+  }
+
   &__footer {
     position: relative;
-  }
-
-  &--sidebar {
-    @include susy-breakpoint(md) {
-      & #{$b}__heading,
-      & #{$b}__body {
-        @include span(9 last);
-      }
-
-      & #{$b}__sidebar {
-        @include span(3);
-      }
-    }
-  }
-
-  &--aside {
-    & > :nth-child(1) {
-      & > :first-child {
-        margin-top: 1rem;
-      }
-
-      @include susy-breakpoint(md) {
-        @include span(8);
-      }
-    }
-
-    & > :nth-child(2) {
-      & > :first-child {
-        margin-top: 1rem;
-      }
-
-      @include susy-breakpoint(md) {
-        @include span(4 last);
-      }
-    }
   }
 }

@@ -162,31 +162,12 @@ hr {
     box-sizing: border-box; }
   .layout--full-bleed {
     padding: 0; }
+  .layout--success {
+    background-color: #328760; }
+  .layout--error {
+    background-color: #cb2026; }
   .layout__footer {
     position: relative; }
-  @media (min-width: 48rem) {
-    .layout--sidebar .layout__heading, .layout--sidebar .layout__body {
-      width: 74.28571%;
-      float: right;
-      margin-right: 0; }
-    .layout--sidebar .layout__sidebar {
-      width: 22.85714%;
-      float: left;
-      margin-right: 2.85714%; } }
-  .layout--aside > :nth-child(1) > :first-child {
-    margin-top: 1rem; }
-  @media (min-width: 48rem) {
-    .layout--aside > :nth-child(1) {
-      width: 65.71429%;
-      float: left;
-      margin-right: 2.85714%; } }
-  .layout--aside > :nth-child(2) > :first-child {
-    margin-top: 1rem; }
-  @media (min-width: 48rem) {
-    .layout--aside > :nth-child(2) {
-      width: 31.42857%;
-      float: right;
-      margin-right: 0; } }
 
 .gallery {
   max-width: 100%;
