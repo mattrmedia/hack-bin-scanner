@@ -1,10 +1,18 @@
 .scanner {
   &__bin,
-  &__item {
+  &__item,
+  &__welcome {
     color: #fff;
   }
+
+  &__welcome {
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: 200;
+  }
+
   &__bin {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 200;
   }
 
