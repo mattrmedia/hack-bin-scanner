@@ -4,7 +4,8 @@
   "description": "Barcode scanning app for DC",
   "main": "index.js",
   "scripts": {
-    "build:scss": "node-sass src/scss/public.scss --output assets/css/ --source-map-embed --source-map-contents"
+    "build:scss": "node-sass src/scss/public.scss --output assets/css/ --source-map-embed --source-map-contents",
+    "dev": "lite-server"
   },
   "repository": {
     "type": "git",
