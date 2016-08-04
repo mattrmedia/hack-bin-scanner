@@ -5,14 +5,16 @@
   window.__env.apiUrl = host === 'undefined' ? 'http://localhost:3000' : host;
 })(this);
 
-this.binScanner = angular.module('binScanner', ['restangular', 'ui.router', 'ngCookies']);
+this.binScanner = angular.module('binScanner', ['restangular', 'ui.router', 'ngCookies', 'angularMoment']);
 
 this.binScanner.constant('__env', window.__env);
 
 this.binScanner.config([
   'RestangularProvider', '__env', function(RestangularProvider, __env) {
     RestangularProvider.setDefaultHeaders({
-      'Authorization': 'Token token=fe420ac77d9360dbdca56aa0b3aa5851'
+      'Authorization': 'Token token=fe420ac77d9360dbdca56aa0b3aa5851',
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     });
     return RestangularProvider.setBaseUrl(__env.apiUrl + "/api/v1");
   }
@@ -42,8 +44,21 @@ this.binScanner.run([
         return $state.go('login');
       }
     });
-    return $rootScope.$on('$startChangeStart', function(ev, toState, toParams, fromState, fromParams) {
-      if (($cookies.getObject('authToken') === null) && (toState === 'home')) {
+    Restangular.addFullRequestInterceptor(function(el, op, what, url, headers, params) {
+      var authToken, currentHeaders;
+      if (what !== 'auth/token') {
+        currentHeaders = headers;
+        authToken = $cookies.getObject('authToken');
+        currentHeaders['X-USER-LOGIN'] = authToken.email;
+        currentHeaders['X-USER-TOKEN'] = authToken.token;
+      }
+      return {
+        headers: currentHeaders
+      };
+    });
+    return $rootScope.$on('$stateChangeStart', function(ev, toState, toParams, fromState, fromParams) {
+      if (($cookies.getObject('authToken') === void 0) && !(toState.name === 'login')) {
+        ev.preventDefault();
         return $state.go('login');
       }
     });
@@ -57,13 +72,14 @@ this.binScanner.controller('ScanCtrl', [
     vm.binCode = null;
     vm.itemCode = null;
     vm.addResult = null;
-    vm.itemCount = "-";
+    vm.itemCount = null;
     vm.processCode = function(code) {
       if (code.match(/BIN/)) {
         console.log("Updating BIN number");
         return BinService.getBin(code).then(function(result) {
           vm.binCode = result.barcode;
-          return vm.itemCount = result.item_count;
+          vm.itemCount = result.item_count;
+          return true;
         }, function(error) {
           console.log(error);
           return vm.addResult = 'failure';
@@ -75,14 +91,13 @@ this.binScanner.controller('ScanCtrl', [
           return alert("No BIN selected.  Scan BIN to add Item.");
         } else {
           vm.itemCode = code;
-          return BinService.addItemToBin({
-            bin_barcode: vm.binCode,
+          return BinService.addItemToBin(vm.binCode, {
             item_barcode: vm.itemCode
           }).then(function(result) {
             vm.addResult = 'success';
             return vm.itemCount = result.item_count;
           }, function(error) {
-            console.log(response);
+            console.log(error);
             return vm.addResult = 'failure';
           });
         }
@@ -95,7 +110,7 @@ this.binScanner.controller('ScanCtrl', [
 ]);
 
 this.binScanner.controller('LoginCtrl', [
-  'LoginService', '$state', function(LoginService) {
+  'LoginService', '$state', '$cookies', 'moment', function(LoginService, $state, $cookies, moment) {
     var vm;
     vm = this;
     vm.params = {};
@@ -106,14 +121,17 @@ this.binScanner.controller('LoginCtrl', [
     vm.submitLogin = function() {
       var params;
       params = {
-        login: vm.user.login,
-        password: vm.user.password
+        login: vm.params.login,
+        password: vm.params.password
       };
       return LoginService.login(params).then(function(result) {
-        return $cookies.putOject('authToken', {
+        $cookies.putObject('authToken', {
           email: result.user.email,
           token: result.authentication_token
+        }, {
+          expires: moment().add(4, 'hours').toDate()
         });
+        return $state.go('home');
       }, function(error) {});
     };
     return vm;
@@ -128,8 +146,8 @@ this.binScanner.factory('BinService', [
       getBin: function(code) {
         return Restangular.one(path, code).get();
       },
-      addItemToBin: function(data) {
-        return Restangular.all(path).post(data);
+      addItemToBin: function(bin, data) {
+        return Restangular.one(path, bin).patch(data);
       }
     };
     return service;
@@ -151,7 +169,7 @@ this.binScanner.factory('LoginService', [
 this.binScanner.directive('codeScan', [
   '$document', '$timeout', function($document, $timeout) {
     return {
-      restrict: 'A',
+      restrict: 'E',
       controller: 'ScanCtrl',
       controllerAs: 'scan',
       bindToController: true,

@@ -5,12 +5,17 @@
   return
 ) this
 
-@binScanner = angular.module 'binScanner', ['restangular', 'ui.router', 'ngCookies']
+@binScanner = angular.module 'binScanner', ['restangular', 'ui.router', 'ngCookies', 'angularMoment']
 
 @binScanner.constant('__env', window.__env)
 
 @binScanner.config ['RestangularProvider', '__env', (RestangularProvider, __env) ->
-  RestangularProvider.setDefaultHeaders({'Authorization': 'Token token=fe420ac77d9360dbdca56aa0b3aa5851'})
+  RestangularProvider.setDefaultHeaders({
+    'Authorization': 'Token token=fe420ac77d9360dbdca56aa0b3aa5851',
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  })
+
   RestangularProvider.setBaseUrl("#{__env.apiUrl}/api/v1")
 ]
 
@@ -32,11 +37,21 @@
 ]
 
 @binScanner.run ['$rootScope', '$state', '$cookies', 'Restangular', ($rootScope, $state, $cookies, Restangular) ->
+
   Restangular.addErrorInterceptor (response) ->
     $state.go('login') if response.status is (401 || 403)
 
-  $rootScope.$on '$startChangeStart', (ev, toState, toParams, fromState, fromParams) ->
-    if ($cookies.getObject('authToken') is null) and (toState is 'home')
+  Restangular.addFullRequestInterceptor (el, op, what, url, headers, params) ->
+    unless what is 'auth/token'
+      currentHeaders = headers
+      authToken = $cookies.getObject('authToken')
+      currentHeaders['X-USER-LOGIN'] = authToken.email
+      currentHeaders['X-USER-TOKEN'] = authToken.token
+    return {headers: currentHeaders}
+
+  $rootScope.$on '$stateChangeStart', (ev, toState, toParams, fromState, fromParams) ->
+    if ($cookies.getObject('authToken') is undefined) and !(toState.name is 'login')
+      ev.preventDefault()
       $state.go('login')
 ]
 
@@ -45,7 +60,7 @@
   vm.binCode = null
   vm.itemCode = null
   vm.addResult = null
-  vm.itemCount = "-"
+  vm.itemCount = null
 
   vm.processCode = (code) ->
     if code.match(/BIN/)
@@ -53,6 +68,7 @@
       BinService.getBin(code).then (result) ->
         vm.binCode = result.barcode
         vm.itemCount = result.item_count
+        true
       , (error) ->
         console.log error
         vm.addResult = 'failure'
@@ -64,11 +80,11 @@
         alert("No BIN selected.  Scan BIN to add Item.")
       else
         vm.itemCode = code
-        BinService.addItemToBin({bin_barcode: vm.binCode, item_barcode: vm.itemCode}).then (result) ->
+        BinService.addItemToBin(vm.binCode, { item_barcode: vm.itemCode }).then (result) ->
           vm.addResult = 'success'
           vm.itemCount = result.item_count
         , (error) ->
-          console.log response
+          console.log error
           vm.addResult = 'failure'
 
     else "What'd you do?"
@@ -76,18 +92,18 @@
   vm
 ]
 
-@binScanner.controller 'LoginCtrl', ['LoginService', '$state', (LoginService) ->
+@binScanner.controller 'LoginCtrl', ['LoginService', '$state', '$cookies', 'moment', (LoginService, $state, $cookies, moment) ->
 
   vm = this
   vm.params = {}
   vm.error = { present: false, message: null }
 
   vm.submitLogin = () ->
-    params = { login: vm.user.login, password: vm.user.password }
+    params = { login: vm.params.login, password: vm.params.password }
     LoginService.login(params).then (result) ->
-      $cookies.putOject('authToken', {email: result.user.email, token: result.authentication_token})
+      $cookies.putObject('authToken', {email: result.user.email, token: result.authentication_token}, {expires: moment().add(4, 'hours').toDate()})
+      $state.go('home')
     , (error) ->
-
 
   vm
 ]
@@ -101,8 +117,8 @@
     getBin: (code) ->
       Restangular.one(path, code).get()
 
-    addItemToBin: (data) ->
-      Restangular.all(path).post(data)
+    addItemToBin: (bin, data) ->
+      Restangular.one(path, bin).patch(data)
 
   service
 ]
@@ -118,7 +134,7 @@
 ]
 
 @binScanner.directive 'codeScan', [ '$document', '$timeout', ($document, $timeout)->
-  restrict: 'A'
+  restrict: 'E'
   controller: 'ScanCtrl'
   controllerAs: 'scan'
   bindToController: true

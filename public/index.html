@@ -11,10 +11,11 @@
     <div class="scanner__logo">
         <img src="images/svgs/new-logo.svg" alt="EBTH Logo">
     </div>
-    <div class="scanner__count">
-        <span>Item Count:</span>
-        <span data-count>{{ scan.itemCount || "-" }}</span>
-    </div>
+    <!--<div class="scanner__count" ui-view="home">-->
+        <!--<span>Item Count:</span>-->
+        <!--<span data-count>{{scan.itemCount}}</span>-->
+        <!--{{scan.itemCount == undefined}}-->
+    <!--</div>-->
 </header>
 <div class="layout layout--welcome" ui-view>
 
