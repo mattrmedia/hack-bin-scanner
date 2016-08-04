@@ -4,10 +4,8 @@
   "description": "Barcode scanning app for DC",
   "main": "index.js",
   "scripts": {
-    "build:scss": "node-sass src/scss/public.scss --output assets/css/ --source-map-embed --source-map-contents",
-    "watch:scss": "npm run build:scss -- --watch",
-    "dev": "lite-server",
-    "build": "npm run build:scss && npm run dev"
+    "start": "nf start",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -19,9 +17,58 @@
     "url": "https://github.com/mattrmedia/hack-bin-scanner/issues"
   },
   "homepage": "https://github.com/mattrmedia/hack-bin-scanner#readme",
+  "engines": {
+    "node": "6.2.2"
+  },
   "devDependencies": {
-    "lite-server": "^2.2.2",
-    "node-sass": "^3.8.0",
-    "watchify": "^3.7.0"
+    "browser-sync": "*",
+    "browserify": "*",
+    "browserify-shim": "*",
+    "coffeeify": "*",
+    "del": "*",
+    "foreman": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-coffee": "*",
+    "gulp-concat": "*",
+    "gulp-connect": "*",
+    "gulp-preprocess": "*",
+    "gulp-sass": "*",
+    "gulp-sequence": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-streamify": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp-watch": "*",
+    "sass": "*",
+    "scssify": "*",
+    "vinyl-buffer": "*",
+    "vinyl-source-stream": "*",
+    "watchify": "*"
+  },
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-cookies": "1.5.8",
+    "angular-ui-router": "0.3.1",
+    "jquery": "3.1.0",
+    "lodash": "4.14.1",
+    "restangular": "1.5.2"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "restangular": "./node_modules/restangular/dist/restangular.js"
+  },
+  "browserify-shim": {
+    "restangular": {
+      "depends": [
+        "angular",
+        "lodash:_"
+      ],
+      "exports": "null"
+    }
   }
 }

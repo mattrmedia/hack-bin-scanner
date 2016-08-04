@@ -1,0 +1,7 @@
+<div class="scanner__status">
+    <img class="svg svg__check" ng-if="scan.addResult == 'success'" src="images/svgs/binscan-checkmark.svg">
+    <img class="svg svg__oops" ng-if="scan.addResult == 'failure'" src="images/svgs/binscan-ohshit.svg">
+</div>
+<div class="scanner__welcome" ng-if="!scan.binCode">Scan a Bin</div>
+<div class="scanner__bin" data-bin ng-if="scan.binCode">{{scan.binCode}}</div>
+<div class="scanner__item" data-item ng-if="scan.itemCode">{{scan.itemCode}}</div>
