@@ -110,7 +110,7 @@ this.binScanner.controller('ScanCtrl', [
 ]);
 
 this.binScanner.controller('LoginCtrl', [
-  'LoginService', '$state', '$cookies', 'moment', function(LoginService, $state, $cookies, moment) {
+  'LoginService', '$state', '$cookies', 'moment', function(LoginService, $state, $cookies, $scope, moment) {
     var vm;
     vm = this;
     vm.params = {};
@@ -132,7 +132,12 @@ this.binScanner.controller('LoginCtrl', [
           expires: moment().add(4, 'hours').toDate()
         });
         return $state.go('home');
-      }, function(error) {});
+      }, function(error) {
+        return vm.error = {
+          present: true,
+          message: "Invalid login"
+        };
+      });
     };
     return vm;
   }

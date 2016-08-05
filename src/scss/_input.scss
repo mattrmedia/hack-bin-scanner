@@ -41,6 +41,11 @@
     border-color: $success;
   }
 
+  &.error {
+    border: 1px solid $error;
+    background-color: $error-bg;
+   }
+
   // TODO Refactor this into input-group.scss
   &.search { height: 40px; }
 }

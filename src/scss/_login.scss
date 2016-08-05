@@ -25,5 +25,7 @@
     margin: 0 auto 1rem;
     text-align: left;
     max-width: 75vw;
+
+    &.error input { border: 1px solid $error; }
   }
 }

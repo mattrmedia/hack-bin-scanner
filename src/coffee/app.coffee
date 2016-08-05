@@ -92,7 +92,7 @@
   vm
 ]
 
-@binScanner.controller 'LoginCtrl', ['LoginService', '$state', '$cookies', 'moment', (LoginService, $state, $cookies, moment) ->
+@binScanner.controller 'LoginCtrl', ['LoginService', '$state', '$cookies', 'moment', (LoginService, $state, $cookies, $scope, moment) ->
 
   vm = this
   vm.params = {}
@@ -104,7 +104,7 @@
       $cookies.putObject('authToken', {email: result.user.email, token: result.authentication_token}, {expires: moment().add(4, 'hours').toDate()})
       $state.go('home')
     , (error) ->
-
+        vm.error = { present: true, message: "Invalid login" }
   vm
 ]
 

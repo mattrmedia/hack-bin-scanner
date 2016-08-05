@@ -168,6 +168,9 @@ hr {
 .hidden {
   display: none; }
 
+.error {
+  color: #cb2026; }
+
 .layout {
   flex-grow: 1;
   box-sizing: content-box; }
@@ -392,6 +395,9 @@ hr {
     border-color: #cb2026; }
   .input--success {
     border-color: #328760; }
+  .input.error {
+    border: 1px solid #cb2026;
+    background-color: #ffaaaa; }
   .input.search {
     height: 40px; }
 
@@ -547,6 +553,8 @@ select.input {
   margin: 0 auto 1rem;
   text-align: left;
   max-width: 75vw; }
+  .login__field.error input {
+    border: 1px solid #cb2026; }
 
 .scanner__header {
   position: static;
