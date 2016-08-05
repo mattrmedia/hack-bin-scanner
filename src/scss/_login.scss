@@ -1,16 +1,8 @@
 .login {
 
   &__form {
-    padding: 2rem;
-    width: 100vw;
-    border: none;
     text-align: center;
     color: #fff;
-    @include susy-breakpoint(md) {
-      padding: 2rem 4rem;
-      width: 50vw;
-      text-align: left;
-    }
 
     h1 { font-weight: 200; }
 
@@ -20,12 +12,14 @@
 
     .svg__keyhole {
       display: block;
-      margin-bottom: 1rem;
+      margin: 0 auto 1rem;
       height: 5rem;
     }
   }
 
   &__field {
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
+    text-align: left;
+    max-width: 75vw;
   }
 }

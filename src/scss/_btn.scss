@@ -142,18 +142,5 @@ $buttons: (
         color: map-get($colors, hover-color);
       }
     } // normal
-
-    &--#{$type}-text-only {
-      background-color: transparent;
-      border-color: transparent;
-      color: map-get($colors, color);
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        border-color: transparent;
-        color: map-get($colors, hover-color);
-      }
-    } // text-only
   }
 }

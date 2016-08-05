@@ -3,7 +3,6 @@
 
   flex-grow: 1;
   box-sizing: content-box;
-  padding: 5rem 5rem 0;
 
   & *, & *:before, & *:after {
     box-sizing: border-box;
@@ -23,7 +22,7 @@
 
   &--welcome {
     position: relative;
-    padding: 4rem;
+    padding: 2rem;
     background-color: $brand-primary;
   }
 
