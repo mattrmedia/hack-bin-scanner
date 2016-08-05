@@ -1,0 +1,159 @@
+$buttons: (
+  clear: (
+    bg: transparent, border: #fff, color: #fff,
+    hover-bg: transparent, hover-border: #000, hover-color: #000
+  ),
+  default: (
+    bg: #fff, border: #000, color: #000,
+    hover-bg: #000, hover-border: #000, hover-color: #fff
+  ),
+  primary: (
+    bg: #000, border: #000, color: #fff,
+    hover-bg: $brand-primary, hover-border: $brand-primary, hover-color: #fff
+  ),
+  error: (
+    bg: $error, border: $error, color: #fff,
+    hover-bg: #fff, hover-border: $error, hover-color: $error
+  ),
+  success: (
+    bg: $success, border: $success, color: #fff,
+    hover-bg: #fff, hover-border: $success, hover-color: $success
+  ),
+  sort: (
+    bg: transparent, border: transparent, color: #000,
+    hover-bg: transparent, hover-border: transparent, hover-color: $brand-primary
+  ),
+  callout: (
+    bg: transparent, border: $brand-primary, color: $brand-primary,
+    hover-bg: transparent, hover-border: $brand-primary, hover-color: $brand-primary
+  )
+);
+
+.btn {
+  @extend %proxima-nova-bold;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #000;
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  padding: 0.45em 1.4em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  vertical-align: middle;
+
+  &--sm {
+    font-size: 0.8rem;
+  }
+
+  &--lg {
+    font-size: 1.13rem;
+  }
+
+  &--xl {
+    font-size: 1.3rem;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--to-top {
+    margin: 0 0 1rem 1rem;
+    height: 5rem;
+    width: 5rem;
+    float: right;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    text-align: center;
+    color: #b7b7b7;
+
+    div { position: relative; }
+
+    &:hover {
+      .svg__arrow .a {
+        stroke: #000;
+      }
+    }
+
+    .svg {
+      transition: stroke 0.25s ease;
+      transform: rotate(-90deg);
+    }
+    .centered {
+      position: absolute;
+      left: 50%;
+      margin: 0;
+      transform: translate(-50%);
+    }
+  }
+
+  &--disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
+  // Images inside buttons are likely to be icons. Reset them back from "responsive" default.
+  & img {
+    display: inline-block;
+  }
+
+  & .svg {
+    display: inline-block;
+    fill: currentColor;
+    stroke: currentColor;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.2em;
+  }
+}
+
+.btn {
+  &--link {
+    border: none;
+    color: $brand-primary;
+    padding: 0;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: #000;
+    }
+  }
+
+  @each $type, $colors in $buttons {
+    &--#{$type} {
+      background-color: map-get($colors, bg);
+      border-color: map-get($colors, border);
+      color: map-get($colors, color);
+
+      &:hover,
+      &:focus {
+        background-color: map-get($colors, hover-bg);
+        border-color: map-get($colors, hover-border);
+        color: map-get($colors, hover-color);
+      }
+    } // normal
+
+    &--#{$type}-text-only {
+      background-color: transparent;
+      border-color: transparent;
+      color: map-get($colors, color);
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        border-color: transparent;
+        color: map-get($colors, hover-color);
+      }
+    } // text-only
+  }
+}

@@ -7,9 +7,8 @@
   display: -moz-flex;
   @include clearfix;
   box-sizing: content-box;
-  max-width: 76rem;
-  padding: 5rem;
-  height: 100%;
+  padding: 5rem 5rem 0;
+  height: 100vh;
 
   & *, & *:before, & *:after {
     box-sizing: border-box;
@@ -28,6 +27,8 @@
   }
 
   &--welcome {
+    position: relative;
+    padding: 0;
     background-color: $brand-primary;
   }
 

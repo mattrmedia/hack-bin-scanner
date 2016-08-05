@@ -1,7 +1,13 @@
 .scanner {
 
   &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     padding: 1rem;
+    background-color: #fff;
+    z-index: 10;
     white-space: nowrap;
   }
 

@@ -1,0 +1,50 @@
+.input {
+  display: block;
+  width: 100%;
+  padding: 0.45em 0.5em;
+  font-size: 1rem;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  &__select {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      height: 15px;
+      width: 15px;
+      background: transparent image-url('svgs/arrow-down.svg') no-repeat right center;
+      background-size: 15px;
+    }
+  }
+
+  &--sm {
+    font-size: 0.8rem;
+  }
+
+  &--lg {
+    font-size: 1.13rem;
+  }
+
+  &--xl {
+    font-size: 1.3rem;
+  }
+
+  &--error {
+    border-color: $error;
+  }
+
+  &--success {
+    border-color: $success;
+  }
+
+  // TODO Refactor this into input-group.scss
+  &.search { height: 40px; }
+}
+
+// TODO Refactor this to input-select.scss
+
+select.input { appearance: none; }

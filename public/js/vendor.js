@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/tim/dev/hack-bin-scanner/node_modules/angular-cookies/angular-cookies.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular-cookies/angular-cookies.js":[function(require,module,exports){
 /**
  * @license AngularJS v1.5.8
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -322,11 +322,11 @@ angular.module('ngCookies').provider('$$cookieWriter', function $$CookieWriterPr
 
 })(window, window.angular);
 
-},{}],"/Users/tim/dev/hack-bin-scanner/node_modules/angular-cookies/index.js":[function(require,module,exports){
+},{}],"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular-cookies/index.js":[function(require,module,exports){
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":"/Users/tim/dev/hack-bin-scanner/node_modules/angular-cookies/angular-cookies.js"}],"/Users/tim/dev/hack-bin-scanner/node_modules/angular-moment/angular-moment.js":[function(require,module,exports){
+},{"./angular-cookies":"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular-cookies/angular-cookies.js"}],"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular-moment/angular-moment.js":[function(require,module,exports){
 (function (global){
 /* angular-moment.js / v1.0.0-beta.6 / (c) 2013, 2014, 2015, 2016 Uri Shaked / MIT Licence */
 
@@ -1065,7 +1065,7 @@ module.exports = 'ngCookies';
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"angular":"/Users/tim/dev/hack-bin-scanner/node_modules/angular/index.js","moment":"/Users/tim/dev/hack-bin-scanner/node_modules/moment/moment.js"}],"/Users/tim/dev/hack-bin-scanner/node_modules/angular-ui-router/release/angular-ui-router.js":[function(require,module,exports){
+},{"angular":"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular/index.js","moment":"/Users/zaius/Sites/hack-bin-scanner/node_modules/moment/moment.js"}],"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular-ui-router/release/angular-ui-router.js":[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.3.1
@@ -5642,7 +5642,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],"/Users/tim/dev/hack-bin-scanner/node_modules/angular/angular.js":[function(require,module,exports){
+},{}],"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular/angular.js":[function(require,module,exports){
 /**
  * @license AngularJS v1.5.8
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -37411,11 +37411,11 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],"/Users/tim/dev/hack-bin-scanner/node_modules/angular/index.js":[function(require,module,exports){
+},{}],"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular/index.js":[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":"/Users/tim/dev/hack-bin-scanner/node_modules/angular/angular.js"}],"/Users/tim/dev/hack-bin-scanner/node_modules/jquery/dist/jquery.js":[function(require,module,exports){
+},{"./angular":"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular/angular.js"}],"/Users/zaius/Sites/hack-bin-scanner/node_modules/jquery/dist/jquery.js":[function(require,module,exports){
 /*eslint-disable no-unused-vars*/
 /*!
  * jQuery JavaScript Library v3.1.0
@@ -47491,7 +47491,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],"/Users/tim/dev/hack-bin-scanner/node_modules/lodash/lodash.js":[function(require,module,exports){
+},{}],"/Users/zaius/Sites/hack-bin-scanner/node_modules/lodash/lodash.js":[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -64102,7 +64102,7 @@ return jQuery;
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/Users/tim/dev/hack-bin-scanner/node_modules/moment/moment.js":[function(require,module,exports){
+},{}],"/Users/zaius/Sites/hack-bin-scanner/node_modules/moment/moment.js":[function(require,module,exports){
 //! moment.js
 //! version : 2.14.1
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -68298,7 +68298,7 @@ return jQuery;
     return _moment;
 
 }));
-},{}],"/Users/tim/dev/hack-bin-scanner/node_modules/restangular/dist/restangular.js":[function(require,module,exports){
+},{}],"/Users/zaius/Sites/hack-bin-scanner/node_modules/restangular/dist/restangular.js":[function(require,module,exports){
 (function (global){
 
 ; require("angular");
@@ -69665,7 +69665,7 @@ restangular.provider('Restangular', function() {
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"angular":"/Users/tim/dev/hack-bin-scanner/node_modules/angular/index.js","lodash":"/Users/tim/dev/hack-bin-scanner/node_modules/lodash/lodash.js"}],"/Users/tim/dev/hack-bin-scanner/src/coffee/vendor":[function(require,module,exports){
+},{"angular":"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular/index.js","lodash":"/Users/zaius/Sites/hack-bin-scanner/node_modules/lodash/lodash.js"}],"/Users/zaius/Sites/hack-bin-scanner/src/coffee/vendor":[function(require,module,exports){
 require('lodash');
 
 require('jquery');
@@ -69683,4 +69683,4 @@ require('moment');
 require('angular-moment');
 
 
-},{"angular":"/Users/tim/dev/hack-bin-scanner/node_modules/angular/index.js","angular-cookies":"/Users/tim/dev/hack-bin-scanner/node_modules/angular-cookies/index.js","angular-moment":"/Users/tim/dev/hack-bin-scanner/node_modules/angular-moment/angular-moment.js","angular-ui-router":"/Users/tim/dev/hack-bin-scanner/node_modules/angular-ui-router/release/angular-ui-router.js","jquery":"/Users/tim/dev/hack-bin-scanner/node_modules/jquery/dist/jquery.js","lodash":"/Users/tim/dev/hack-bin-scanner/node_modules/lodash/lodash.js","moment":"/Users/tim/dev/hack-bin-scanner/node_modules/moment/moment.js","restangular":"/Users/tim/dev/hack-bin-scanner/node_modules/restangular/dist/restangular.js"}]},{},["/Users/tim/dev/hack-bin-scanner/src/coffee/vendor"]);
+},{"angular":"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular/index.js","angular-cookies":"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular-cookies/index.js","angular-moment":"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular-moment/angular-moment.js","angular-ui-router":"/Users/zaius/Sites/hack-bin-scanner/node_modules/angular-ui-router/release/angular-ui-router.js","jquery":"/Users/zaius/Sites/hack-bin-scanner/node_modules/jquery/dist/jquery.js","lodash":"/Users/zaius/Sites/hack-bin-scanner/node_modules/lodash/lodash.js","moment":"/Users/zaius/Sites/hack-bin-scanner/node_modules/moment/moment.js","restangular":"/Users/zaius/Sites/hack-bin-scanner/node_modules/restangular/dist/restangular.js"}]},{},["/Users/zaius/Sites/hack-bin-scanner/src/coffee/vendor"]);

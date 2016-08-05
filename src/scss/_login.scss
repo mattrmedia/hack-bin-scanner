@@ -1,0 +1,36 @@
+.login {
+
+  &__form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 2rem;
+    padding: 2rem;
+    width: 100vw;
+    transform: translate(-50%, -50%);
+    border: none;
+    color: #fff;
+    @include susy-breakpoint(md) {
+      padding: 2rem 4rem;
+      width: 60vw;
+      border: 1px solid #fff;
+    }
+
+    h1 { font-weight: 200; }
+
+    h1, p {
+      @extend %proxima-nova;
+      text-align: center;
+    }
+
+    .svg__keyhole {
+      display: block;
+      margin: 0 auto 1rem;
+      height: 4rem;
+    }
+  }
+
+  &__field {
+    margin-bottom: 1rem;
+  }
+}
