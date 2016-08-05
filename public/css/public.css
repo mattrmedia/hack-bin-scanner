@@ -595,27 +595,22 @@ select.input {
     color: #ad9885; }
 
 .login__form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   padding: 2rem;
   width: 100vw;
-  transform: translate(-50%, -50%);
   border: none;
+  text-align: center;
   color: #fff; }
   @media (min-width: 48rem) {
     .login__form {
       padding: 2rem 4rem;
-      width: 60vw;
-      border: 1px solid #fff; } }
+      width: 50vw;
+      text-align: left; } }
   .login__form h1 {
     font-weight: 200; }
-  .login__form h1, .login__form p {
-    text-align: center; }
   .login__form .svg__keyhole {
     display: block;
-    margin: 0 auto 1rem;
-    height: 4rem; }
+    margin-bottom: 1rem;
+    height: 5rem; }
 
 .login__field {
   margin-bottom: 1rem; }
@@ -623,6 +618,7 @@ select.input {
 .scanner__header {
   position: static;
   padding: 1rem;
+  min-height: 90px;
   background-color: #fff;
   z-index: 10;
   white-space: nowrap; }
