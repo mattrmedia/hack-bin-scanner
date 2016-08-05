@@ -598,7 +598,6 @@ select.input {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: 2rem;
   padding: 2rem;
   width: 100vw;
   transform: translate(-50%, -50%);
