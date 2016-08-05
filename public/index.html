@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="binScanner">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>EBTH Scanner</title>
     <link rel="stylesheet" href="css/public.css">
-</head>
-<body>
-<header class="scanner__header">
-    <div class="scanner__logo">
+  </head>
+  <body>
+    <header class="scanner__header">
+      <div class="scanner__logo">
         <img src="images/svgs/new-logo.svg" alt="EBTH Logo">
+      </div>
+    </header>
+    <div class="layout layout--welcome" ui-view>
+
     </div>
-    <!--<div class="scanner__count" ui-view="home">-->
-        <!--<span>Item Count:</span>-->
-        <!--<span data-count>{{scan.itemCount}}</span>-->
-        <!--{{scan.itemCount == undefined}}-->
-    <!--</div>-->
-</header>
-<div class="layout layout--welcome" ui-view>
-
-</div>
-
-<script src="https://use.typekit.net/too6nbe.js"></script>
-<script type="text/javascript" src="js/vendor.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-
-</body>
+    <script src="https://use.typekit.net/too6nbe.js"></script>
+    <script type="text/javascript" src="js/vendor.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
 </html>

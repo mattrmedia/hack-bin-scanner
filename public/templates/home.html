@@ -3,6 +3,11 @@
     <img class="svg svg__oops" ng-if="scan.addResult == 'failure'" src="images/svgs/binscan-ohshit.svg">
 </div>
 <div class="scanner__welcome" ng-if="!scan.binCode">Scan a Bin</div>
+<!--<div class="scanner__count" ui-view="home">-->
+    <!--<span>Item Count:</span>-->
+    <!--<span data-count>{{scan.itemCount}}</span>-->
+    <!--{{scan.itemCount == undefined}}-->
+<!--</div>-->
 <div class="scanner__bin" data-bin ng-if="scan.binCode">{{scan.binCode}}</div>
 <div class="scanner__item" data-item ng-if="scan.itemCode">{{scan.itemCode}}</div>
 <code-scan></code-scan>

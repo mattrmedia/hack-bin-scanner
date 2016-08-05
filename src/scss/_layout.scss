@@ -1,14 +1,9 @@
 .layout {
   $b: &;
 
-  display: flex;
-  display: -ms-flex;
-  display: -webkit-flex;
-  display: -moz-flex;
-  @include clearfix;
+  flex-grow: 1;
   box-sizing: content-box;
   padding: 5rem 5rem 0;
-  height: 100vh;
 
   & *, & *:before, & *:after {
     box-sizing: border-box;
@@ -28,7 +23,7 @@
 
   &--welcome {
     position: relative;
-    padding: 0;
+    padding: 4rem;
     background-color: $brand-primary;
   }
 
