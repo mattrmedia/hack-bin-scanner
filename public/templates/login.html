@@ -10,7 +10,7 @@
     </div>
     <div class="login__field">
         <label for="user_password">Password:</label>
-        <input type="password" name="password" ng-class="login.error.present == true ? 'input error' : 'input'" ng-model="password.params.password" required />
+        <input type="password" name="password" ng-class="login.error.present == true ? 'input error' : 'input'" ng-model="login.params.password" required />
     </div>
     <div class="login__field">
       <input type="submit" value="login" form="login_form" class="btn btn--clear btn--block" ng-disabled="login_form.$pristine" ng-click="login.submitLogin();"/>

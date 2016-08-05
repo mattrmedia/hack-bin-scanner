@@ -92,7 +92,7 @@
   vm
 ]
 
-@binScanner.controller 'LoginCtrl', ['LoginService', '$state', '$cookies', 'moment', (LoginService, $state, $cookies, $scope, moment) ->
+@binScanner.controller 'LoginCtrl', ['LoginService', '$state', '$cookies', 'moment', (LoginService, $state, $cookies, moment) ->
 
   vm = this
   vm.params = {}

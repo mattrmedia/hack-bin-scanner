@@ -110,7 +110,7 @@ this.binScanner.controller('ScanCtrl', [
 ]);
 
 this.binScanner.controller('LoginCtrl', [
-  'LoginService', '$state', '$cookies', 'moment', function(LoginService, $state, $cookies, $scope, moment) {
+  'LoginService', '$state', '$cookies', 'moment', function(LoginService, $state, $cookies, moment) {
     var vm;
     vm = this;
     vm.params = {};
