@@ -530,6 +530,10 @@ select.input {
     color: #ad9885; }
 
 .login__form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #fff; }
   .login__form h1 {
