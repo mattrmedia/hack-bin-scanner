@@ -181,7 +181,6 @@ hr {
     background-color: #cb2026; }
   .layout--welcome {
     position: relative;
-    padding: 2rem;
     background-color: #ad9885; }
   .layout__footer {
     position: relative; }
@@ -568,6 +567,7 @@ select.input {
   color: #fff; }
 
 .scanner__welcome {
+  padding: 2rem;
   text-transform: uppercase;
   font-size: 5rem;
   font-weight: 200; }
